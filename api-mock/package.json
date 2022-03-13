@@ -1,0 +1,11 @@
+{
+  "name": "api-mock",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "json-server --watch ./api/data.json --port 4001 --delay 2000"
+  },
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}

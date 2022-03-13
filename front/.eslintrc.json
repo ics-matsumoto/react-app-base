@@ -1,0 +1,80 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "import", "unused-imports", "prettier"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  // 方針
+  // 追加設定したルールで自動補正が可能のものは（IDEで保存時の補正を行うことを前提に）errorではなくwarnとする
+  "rules": {
+    "prettier/prettier": "warn",
+    // TSで型付できていれば不要なので切る
+    "react/prop-types": "off",
+    // 勝手に noreferrer が付くのを防ぐ（リンク先指定の正確性はコードレビューで担保する）
+    "react/jsx-no-target-blank": "off",
+    // 不要な import の削除
+    "unused-imports/no-unused-imports": "warn",
+    // ワンライナーの if 文を禁止
+    "curly": "warn",
+    // import順の設定
+    "import/order": [
+      "warn",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          }
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "never"
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "format": ["camelCase", "PascalCase", "UPPER_CASE"]
+      },
+      {
+        "selector": ["property", "method", "parameter"],
+        "format": ["camelCase"]
+      },
+      {
+        "selector": ["enum", "typeAlias", "interface", "class"],
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": ["enumMember"],
+        "format": ["UPPER_CASE"]
+      }
+    ]
+  }
+}
