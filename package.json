@@ -4,5 +4,11 @@
   "workspaces": [
     "front",
     "api-mock"
-  ]
+  ],
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail 'yarn workspace api-mock dev' 'yarn workspace front dev'"
+  },
+  "devDependencies": {
+    "concurrently": "7.0.0"
+  }
 }
