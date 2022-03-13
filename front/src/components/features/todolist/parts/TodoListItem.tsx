@@ -26,7 +26,6 @@ export const TodoListItem: React.VFC<Props> = ({ id }) => {
   `;
 
   const progressStyle = css`
-    width: 80px;
     font-weight: bold;
   `;
 

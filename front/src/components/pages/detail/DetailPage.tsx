@@ -8,7 +8,7 @@ import { urls } from '@/consts/urls';
 import { todoDetailCurrentIdAtom } from '@/states/todoDetail';
 
 export const DetailPage: VFC = () => {
-  const { data: loaded } = useMatch(); // 初期化処理の結果を受け取る。ここでは単に初期化が完了したいるかどうかのフラグとして用いる
+  const { data: loaded } = useMatch(); // 初期化処理の結果を受け取る。ここでは単に初期化が完了しているかどうかのフラグとして用いる
   return (
     <>
       <AppHeader />

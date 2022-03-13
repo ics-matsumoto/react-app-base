@@ -9,7 +9,7 @@ export const useLogin = () => {
   const login = async () => {
     // ログイン処理
     setIsRunning(true);
-    await wait(1000);
+    await wait(1000); // ダミーのログイン処理
     navigate({ to: urls.top });
     setIsRunning(false);
   };
