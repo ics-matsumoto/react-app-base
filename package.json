@@ -6,7 +6,8 @@
     "api-mock"
   ],
   "scripts": {
-    "dev": "concurrently --kill-others-on-fail 'yarn workspace api-mock dev' 'yarn workspace front dev'"
+    "dev": "concurrently --kill-others-on-fail 'yarn workspace api-mock dev' 'yarn workspace front dev'",
+    "test": "yarn workspace api-mock test & yarn workspace front test"
   },
   "devDependencies": {
     "concurrently": "7.0.0"
