@@ -7,12 +7,12 @@ type Props = {
 
 export const Loading: React.VFC<Props> = ({ height = 100, text = 'Loading...' }) => {
   const style = css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: ${height}px;
     color: gray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   `;
   return <div css={style}>{text}</div>;
 };

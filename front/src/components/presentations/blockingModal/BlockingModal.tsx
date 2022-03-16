@@ -7,18 +7,18 @@ import { createPortal } from 'react-dom';
 export const BlockingModal: React.FC = ({ children }) => {
   const style = css`
     position: absolute;
-    display: flex;
-    z-index: 9999;
-    left: 0;
     top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
     height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #00000099;
     color: white;
-    user-select: none;
     pointer-events: none;
+    user-select: none;
+    background-color: #00000099;
     backdrop-filter: blur(8px);
   `;
 

@@ -17,12 +17,12 @@ export const TodoListItem: React.VFC<Props> = ({ id }) => {
   }
 
   const itemStyle = css`
-    padding: 12px 24px;
-    border: 1px solid white;
     display: grid;
     grid-template-columns: 80px 1fr 150px;
     width: 100%;
+    padding: 12px 24px;
     background-color: ${progressColor[item?.progress]};
+    border: 1px solid white;
   `;
 
   const progressStyle = css`

@@ -8,7 +8,7 @@ const List: React.VFC = () => {
   const { ids } = useFilteredTodo();
   return (
     <div>
-      {ids.map(id => (
+      {ids.map((id) => (
         <TodoListItem id={id} key={id} />
       ))}
     </div>

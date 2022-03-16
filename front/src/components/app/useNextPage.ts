@@ -10,7 +10,7 @@ export const useNextPage = (pageLoaderFactory?: () => Loader) => {
   const pageLoader = pageLoaderFactory?.();
   const loader = async (match: RouteMatch) => {
     // ページの通番をインクリメントする
-    setIndex(index => (index ?? 0) + 1);
+    setIndex((index) => (index ?? 0) + 1);
     // 次のページで指定されたローダーがあれば呼び出す
     pageLoader?.(match);
     // データの授受はRecoilを通したいので、ローダーからは何も返さない

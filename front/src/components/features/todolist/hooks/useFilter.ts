@@ -21,7 +21,7 @@ export const useFilterValue = () => {
 export const useFilterToggle = () => {
   const setState = useSetRecoilState(filterAtom);
   const toggle = (progress: TodoListItem['progress']) => {
-    setState(state => ({ ...state, ...{ [progress]: !state[progress] } }));
+    setState((state) => ({ ...state, ...{ [progress]: !state[progress] } }));
   };
   return toggle;
 };

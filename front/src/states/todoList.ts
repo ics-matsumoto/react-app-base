@@ -14,6 +14,6 @@ export const todoListItemSelector = selectorFamily({
     (id: number | undefined) =>
     ({ get }) => {
       const list = get(todoListSelector);
-      return list.find(item => item.id === id);
+      return list.find((item) => item.id === id);
     },
 });

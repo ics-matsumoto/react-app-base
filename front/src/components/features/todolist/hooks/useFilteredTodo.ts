@@ -9,8 +9,8 @@ import { todoListSelector } from '@/states/todoList';
 export const useFilteredTodo = () => {
   const allItems = useRecoilValue(todoListSelector);
   const filter = useFilterValue();
-  const items = allItems.filter(item => filter[item.progress]);
-  const ids = items.map(item => item.id);
+  const items = allItems.filter((item) => filter[item.progress]);
+  const ids = items.map((item) => item.id);
   return {
     ids,
     items,
