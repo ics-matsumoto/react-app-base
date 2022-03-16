@@ -20,7 +20,16 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "import", "unused-imports", "prettier"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "import",
+    "unused-imports",
+    "prettier",
+    "jest",
+    "jest-dom",
+    "testing-library"
+  ],
   "settings": {
     "react": {
       "version": "detect"
@@ -76,5 +85,15 @@
         "format": ["UPPER_CASE"]
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/__tests__/**/*.+(ts|tsx|js)", "**/?(*.)+(spec|test).+(ts|tsx|js)"],
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/react"
+      ]
+    }
+  ]
 }
